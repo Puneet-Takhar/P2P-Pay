@@ -2,17 +2,40 @@ import React from 'react';
 
 const AboutPage = () => {
   return (
-    <div className="about-page">
+    <div className="page-content about-page">
       <h1>About Us</h1>
-      <img src="https://img.freepik.com/free-vector/bank-card-coin-withdrawal-money-money-payment-symbol-vector-illustration_587448-912.jpg?t=st=1745330526~exp=1745334126~hmac=7f601cbaa1094535bba21928dd56023bdbb0c89ec1be9824bbf5efa77482bec7&w=1800" alt="About" className="about-image" />
-      <p>
-        Welcome to P2P Pay, your trusted platform for secure and instant money transfers. Our mission is to make sending and receiving money as easy and secure as possible. With our user-friendly interface and robust security measures, you can trust us with your transactions.
-      </p>
-      <p>
-        At P2P Pay, we believe in providing a seamless and secure experience for our users. Our platform is designed to be intuitive and easy to use, ensuring that you can send and receive money with just a few clicks. Whether you're sending money to friends, family, or business partners, P2P Pay ensures that your transactions are quick and reliable.
-      </p>
+      <div className="content-wrapper">
+        <div className="video-background">
+          <video autoPlay loop muted>
+            <source src="https://static.videezy.com/system/resources/previews/000/008/090/original/Data_Grid.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="content">
+          <h2>Our Mission</h2>
+          <p>
+            At P2P Pay, our mission is to revolutionize the way people send and receive money. We aim to provide a seamless, secure, and user-friendly platform that makes financial transactions effortless and accessible to everyone.
+          </p>
+          <h2>Our Vision</h2>
+          <p>
+            Our vision is to become the go-to platform for peer-to-peer payments, connecting people across the globe with a simple and secure money transfer solution. We strive to empower individuals and businesses with the tools they need to manage their finances efficiently.
+          </p>
+          <h2>Our Values</h2>
+          <ul>
+            <li>Security: We prioritize the security of your transactions and personal information.</li>
+            <li>Innovation: We continuously innovate to provide the best user experience.</li>
+            <li>Customer-Centric: We put our customers first and strive to meet their needs.</li>
+          </ul>
+          <h2>Our Team</h2>
+          <p>
+            Our team consists of passionate professionals dedicated to making P2P Pay the best it can be. From developers to customer support, we work together to ensure that our platform meets the highest standards of quality and security.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default AboutPage;
+
+
+
