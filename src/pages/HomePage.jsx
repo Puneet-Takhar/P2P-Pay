@@ -1,37 +1,157 @@
+// src/pages/HomePage.js
 import React from 'react';
-import HeroSection from '../components/HeroSection';
-import SendMoney from '../components/SendMoney';
-import ReceiveMoney from '../components/ReceiveMoney';
-import TransactionHistory from '../components/TransactionHistory';
-import ContactUs from '../components/ContactUs';
+import { motion } from 'framer-motion';
+import { FaMoneyBillWave, FaLock, FaMobileAlt, FaUsers, FaCreditCard, FaChartLine } from 'react-icons/fa';
+import '../styles/home.css';
 
 const HomePage = () => {
   return (
-    <div>
-      <HeroSection />
-      <SendMoney />
-      <ReceiveMoney />
-      <TransactionHistory />
-      <div className="additional-content">
-        <h2>Why Choose P2P Pay?</h2>
-        <p>
-          P2P Pay offers a secure and convenient way to send and receive money instantly. With our user-friendly interface and robust security measures, you can trust us with your transactions.
-        </p>
-        <img
-          src="https://img.freepik.com/free-photo/question-mark-icon-solving-problem-solution-concept_53876-13887.jpg?t=st=1745333139~exp=1745336739~hmac=d865593e080314b6080dfb176824ec3203f695e9750df6e96a0f05a55365c139&w=1800"
-          alt="Why Choose Us"
-          className="additional-image"
-        />
-      </div>
-      <div className="divider"></div>
-      <ContactUs />
+    <div className="home-container">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <motion.h1
+            className="hero-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="gradient-text">Revolutionize Your Payments</span>
+          </motion.h1>
+          <motion.p
+            className="hero-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Experience the future of digital transactions with our secure, fast, and user-friendly payment platform.
+          </motion.p>
+          <div className="hero-cta">
+            <motion.a
+              href="/signup"
+              className="cta-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ backgroundColor: 'white', color: '#ff6b6b', border: '2px solid white' }}
+            >
+              Get Started
+            </motion.a>
+            <motion.a
+              href="/about"
+              className="cta-button secondary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ background: 'transparent', border: '2px solid white', color: 'white' }}
+            >
+              Learn More
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="feature-section">
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Why Choose Our Platform?
+        </motion.h2>
+
+        <div className="features-grid">
+          {[
+            {
+              icon: <FaMoneyBillWave />,
+              title: "Instant Transfers",
+              description: "Send and receive money instantly with our lightning-fast payment processing.",
+              color: "#ff6b6b"
+            },
+            {
+              icon: <FaLock />,
+              title: "Bank-Level Security",
+              description: "Your transactions are protected with the highest security standards in the industry.",
+              color: "#48dbfb"
+            },
+            {
+              icon: <FaMobileAlt />,
+              title: "Mobile Friendly",
+              description: "Access your account and make payments from any device, anywhere.",
+              color: "#1dd1a1"
+            },
+            {
+              icon: <FaUsers />,
+              title: "User Friendly",
+              description: "Intuitive interface designed for seamless user experience.",
+              color: "#feca57"
+            },
+            {
+              icon: <FaCreditCard />,
+              title: "Multiple Payment Options",
+              description: "Support for various payment methods including cards, bank transfers, and digital wallets.",
+              color: "#54a0ff"
+            },
+            {
+              icon: <FaChartLine />,
+              title: "Transaction Tracking",
+              description: "Keep track of all your payments with our comprehensive transaction history.",
+              color: "#ff9ff3"
+            }
+          ].map((feature, index) => (
+            <motion.div
+              key={index}
+              className="feature-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+              style={{ borderTop: `4px solid ${feature.color}` }}
+            >
+              <div className="feature-icon" style={{ background: `${feature.color}20`, color: feature.color }}>
+                {feature.icon}
+              </div>
+              <h3 className="feature-title">{feature.title}</h3>
+              <p className="feature-description">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <motion.h2
+          className="cta-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Ready to Transform Your Payments?
+        </motion.h2>
+        <motion.p
+          className="hero-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          style={{ color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto 2rem' }}
+        >
+          Join thousands of satisfied users who are already enjoying seamless peer-to-peer payments.
+        </motion.p>
+        <motion.a
+          href="/signup"
+          className="cta-button"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Sign Up Now
+        </motion.a>
+      </section>
     </div>
   );
 };
 
 export default HomePage;
-
-
-
-
-

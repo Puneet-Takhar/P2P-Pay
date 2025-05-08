@@ -1,47 +1,73 @@
+// src/components/Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="logo">
-        <Link to="/" className="logo-link">
-          P2P Pay
-        </Link>
+    <motion.nav
+      className="navbar"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+    >
+      <div className="navbar-container">
+        <motion.div
+          className="navbar-logo"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Link to="/">P2P Pay</Link>
+        </motion.div>
+        <div className="navbar-links">
+          <motion.div
+            className="navbar-link"
+            whileHover={{ y: -3, color: '#4361ee' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/">Home</Link>
+          </motion.div>
+          <motion.div
+            className="navbar-link"
+            whileHover={{ y: -3, color: '#4361ee' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/about">About</Link>
+          </motion.div>
+          <motion.div
+            className="navbar-link"
+            whileHover={{ y: -3, color: '#4361ee' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/services">Services</Link>
+          </motion.div>
+          <motion.div
+            className="navbar-link"
+            whileHover={{ y: -3, color: '#4361ee' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/blog">Blog</Link>
+          </motion.div>
+        </div>
+        <div className="navbar-auth">
+          <motion.div
+            className="navbar-button"
+            whileHover={{ scale: 1.05, backgroundColor: '#3f37c9' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/login">Login</Link>
+          </motion.div>
+          <motion.div
+            className="navbar-button primary"
+            whileHover={{ scale: 1.05, backgroundColor: '#3a35b8' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/signup">Sign Up</Link>
+          </motion.div>
+        </div>
       </div>
-      <ul className="nav-links">
-        <li>
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/about" className="nav-link">
-            About
-          </Link>
-        </li>
-        <li>
-          <Link to="/services" className="nav-link">
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link to="/blog" className="nav-link">
-            Blog
-          </Link>
-        </li>
-        <li>
-          <Link to="/login" className="nav-link">
-            Login
-          </Link>
-        </li>
-        <li>
-          <Link to="/signup" className="nav-link">
-            Signup
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -1,0 +1,263 @@
+:root {
+    --auth-primary: #4361ee;
+    --auth-secondary: #3f37c9;
+    --auth-accent: #4895ef;
+    --auth-text: #4a5568;
+    --auth-light: #f7fafc;
+    --auth-dark: #1a202c;
+  }
+  
+  .auth-container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--auth-light) 0%, #e2e8f0 100%);
+  }
+  
+  .auth-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .auth-left-panel {
+    background: linear-gradient(135deg, var(--auth-primary) 0%, var(--auth-secondary) 100%);
+    color: white;
+  }
+  
+  .auth-right-panel {
+    background: white;
+  }
+  
+  .auth-form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .auth-form-container:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .auth-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--auth-text);
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .auth-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--auth-primary);
+    border-radius: 2px;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .auth-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .auth-input:focus {
+    outline: none;
+    border-color: var(--auth-primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--auth-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .auth-button:hover {
+    background: var(--auth-secondary);
+    transform: translateY(-2px);
+  }
+  
+  .auth-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .auth-button:hover::after {
+    transform: translateX(100%);
+  }
+  
+  .auth-toggle {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: var(--auth-text);
+  }
+  
+  .auth-toggle a {
+    color: var(--auth-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .auth-toggle a:hover {
+    color: var(--auth-secondary);
+  }
+  
+  .auth-illustration {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+  }
+  
+  .auth-floating {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+    }
+  }
+  
+  .auth-left-panel::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+  }
+  
+  .auth-left-panel::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+  }
+  
+  /* Unique transition effects */
+  .auth-transition-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .auth-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .auth-transition-exit {
+    opacity: 1;
+  }
+  
+  .auth-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  /* 3D button effect */
+  .auth-3d-button {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .auth-3d-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--auth-secondary);
+    transform: translateZ(-1px);
+    transition: transform 0.3s ease;
+  }
+  
+  .auth-3d-button:hover::before {
+    transform: translateZ(0);
+  }
+  
+  /* Glow effect */
+  .auth-glow {
+    position: relative;
+  }
+  
+  .auth-glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(67, 97, 238, 0.3), rgba(63, 55, 201, 0.3));
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .auth-glow:hover::after {
+    opacity: 1;
+  }
+  

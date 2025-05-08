@@ -1,5 +1,18 @@
-.App {
+.app {
   text-align: center;
+  padding: 48px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+  color: var(--dark-blue);
+}
+
+p {
+  font-size: 24px;
+  margin-bottom: 48px;
+  color: var(--dark-gray);
 }
 
 .App-logo {
