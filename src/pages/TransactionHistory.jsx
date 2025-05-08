@@ -1,10 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const TransactionHistory = () => {
-  const transactions = [
-    { date: '2023-10-01', amount: '100.00', recipient: 'John Doe' },
-    { date: '2023-09-25', amount: '50.00', recipient: 'Jane Smith' },
-  ];
+  const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
   return (
     <div className="transaction-history">
@@ -12,9 +9,7 @@ const TransactionHistory = () => {
       <ul>
         {transactions.map((transaction, index) => (
           <li key={index}>
-            <strong>Date:</strong> {transaction.date} <br />
-            <strong>Amount:</strong> {transaction.amount} <br />
-            <strong>Recipient:</strong> {transaction.recipient}
+            {transaction.date}: Sent {transaction.amount} to {transaction.receiver}
           </li>
         ))}
       </ul>

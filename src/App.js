@@ -7,7 +7,7 @@ import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Footer from "./components/Footer";
 import { AuthProvider } from './context/AuthContext';
 import './styles/styles.css';
 

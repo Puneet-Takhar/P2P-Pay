@@ -1,45 +1,36 @@
-import React, { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import React, { useState } from "react";
 
-const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { login } = useContext(AuthContext);
-  const navigate = useNavigate();
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    login();
-    navigate('/');
+    if (email === "user@example.com" && password === "password") {
+      localStorage.setItem("user", JSON.stringify({ email }));
+      alert("Login successful!");
+    } else {
+      alert("Invalid credentials.");
+    }
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <h2>Login</h2>
-        <form>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="button" onClick={handleLogin}>
-            Login
-          </button>
-        </form>
-        <p>
-          Don't have an account? <Link to="/signup">Sign Up</Link>
-        </p>
-      </div>
+    <div className="login">
+      <h2>Login</h2>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 };
 
-export default LoginPage;
+export default Login;
