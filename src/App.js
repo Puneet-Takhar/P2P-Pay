@@ -8,6 +8,7 @@ import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TransactionsPage from './pages/TransactionsPage';
 import TermsPage from './pages/TermsPage';
 import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
@@ -37,6 +38,7 @@ const App = () => {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/transactions" element={<TransactionsPage />} />
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />

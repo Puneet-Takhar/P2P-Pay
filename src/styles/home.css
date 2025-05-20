@@ -304,3 +304,67 @@
     background-position: center;
   }
   
+  /* Transaction History Icon Styles */
+.transaction-history-icon {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.history-icon {
+  font-size: 2.5rem;
+  color: #ff6b6b;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.history-icon:hover {
+  color: #48dbfb;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.history-tooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.transaction-history-icon:hover .history-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .transaction-history-icon {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .history-icon {
+    font-size: 2rem;
+    padding: 0.8rem;
+  }
+
+  .history-tooltip {
+    display: none; 
+  }
+}
