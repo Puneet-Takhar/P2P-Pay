@@ -8,6 +8,7 @@ import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
 import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
 import { AuthProvider } from './context/AuthContext';
@@ -36,6 +37,7 @@ const App = () => {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
             </Routes>
