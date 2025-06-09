@@ -23,6 +23,7 @@ import Accessibility from './pages/Accessibility';
 import PrivacyStatement from './pages/PrivacyStatement';
 import Cookies from './pages/Cookies';
 import Legal from './pages/Legal'; 
+import { Analytics } from "@vercel/analytics/react"
 
 import './styles/styles.css';
 
@@ -65,7 +66,8 @@ const App = () => {
             </Routes>
           </motion.div>
           <Footer />
-          <TransactionIcon /> 
+          <TransactionIcon />
+          <Analytics />
         </motion.div>
       </Router>
     </AuthProvider>
