@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import Flag from "/Users/puneettakhar/Downloads/P2P Payment/P2P-Pay/src/images/512px-Flag_of_India.jpg"
+import Flag from "../images/512px-Flag_of_India.jpg"
 
 const Footer = () => {
   return (
