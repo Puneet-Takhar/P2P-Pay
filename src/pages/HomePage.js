@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaMoneyBillWave, FaLock, FaMobileAlt, FaUsers, FaCreditCard, FaChartLine, FaHistory } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaMoneyBillWave, FaLock, FaMobileAlt, FaUsers, FaCreditCard, FaChartLine, } from 'react-icons/fa';
 import '../styles/home.css';
 
 const HomePage = () => {
@@ -9,17 +8,7 @@ const HomePage = () => {
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero-section">
-        {/* Transaction History Icon - Positioned in top right corner */}
-        <Link to="/transactions" className="transaction-history-icon">
-          <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <FaHistory className="history-icon" />
-            <span className="history-tooltip">Transaction History</span>
-          </motion.div>
-        </Link>
+      
 
         <div className="hero-content">
           <motion.h1

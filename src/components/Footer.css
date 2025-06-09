@@ -1,47 +1,61 @@
-.footer {
-    background-color: var(--dark-blue);
-    color: var(--white);
-    padding: 48px 0;
-    text-align: center;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-  
-  .footer-links a {
-    color: var(--white);
-    margin: 0 16px;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links a:hover {
-    color: var(--light-blue);
-  }
-  
-  .footer-contact {
-    margin-bottom: 24px;
-  }
-  
-  .footer-contact h3 {
-    margin-bottom: 8px;
-  }
-  
-  .footer-social {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footer-social a {
-    color: var(--white);
-    font-size: 24px;
-    margin: 0 12px;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-social a:hover {
-    color: var(--light-blue);
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+
+.paypal-footer {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 2rem 1rem;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.top-row a,
+.bottom-row a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 1.5rem auto;
+  max-width: 1200px;
+}
+
+.footer-links,
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.footer-right span {
+  margin-right: 1rem;
+  font-weight: 400;
+}
+
+
+.footer-address {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 1rem;
+}
+
+.flag {
+  width: 20px;
+  height: auto;
+  margin-left: auto;
+}

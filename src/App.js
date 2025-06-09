@@ -10,9 +10,20 @@ import SignupPage from './pages/SignupPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TransactionsPage from './pages/TransactionsPage';
 import TermsPage from './pages/TermsPage';
+import Help from './pages/Help';
+import Contact from './pages/Contact';
+import Newsroom from './pages/Newsroom';
+import InvestorRelations from './pages/InvestorRelations';
+import GovernmentRelations from './pages/GovernmentRelations';
 import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
 import { AuthProvider } from './context/AuthContext';
+import TransactionIcon from './components/TransactionIcon';
+import Accessibility from './pages/Accessibility';
+import PrivacyStatement from './pages/PrivacyStatement';
+import Cookies from './pages/Cookies';
+import Legal from './pages/Legal'; 
+
 import './styles/styles.css';
 
 const App = () => {
@@ -42,9 +53,19 @@ const App = () => {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
+              <Route path="/accessibility" element={<Accessibility />} />
+              <Route path="/privacy-statement" element={<PrivacyStatement />} />
+              <Route path="/cookies" element={<Cookies />} />
+              <Route path="/legal" element={<Legal />} />
+              <Route path="/help" element={<Help />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/newsroom" element={<Newsroom />} />
+              <Route path="/investor-relations" element={<InvestorRelations />} />
+              <Route path="/government-relations" element={<GovernmentRelations />} />
             </Routes>
           </motion.div>
           <Footer />
+          <TransactionIcon /> 
         </motion.div>
       </Router>
     </AuthProvider>
