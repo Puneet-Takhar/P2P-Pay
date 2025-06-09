@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaHome, FaInfoCircle, FaCreditCard, FaBlog, FaUser, FaSignInAlt } from 'react-icons/fa';
 import '../styles/Navbar.css';
-import logo from '/Users/puneettakhar/Downloads/P2P Payment/P2P-Pay/src/images/brave_screenshot_www.logoai.com (1).png';
+import logo from '/Users/puneettakhar/Downloads/P2P Payment/P2P-Pay/src/images/prime_logo.png';
 
 
 const Navbar = () => {
