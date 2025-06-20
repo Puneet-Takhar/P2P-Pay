@@ -23,7 +23,7 @@
     width: 100vw;
     height: 100vh;
     background: linear-gradient(135deg, #002f61 0%, #001f3f 100%);
-    background-image: url('/Users/puneettakhar/Downloads/P2P Payment/P2P-Pay/src/images/home-bg-img.jpg');
+    background-image: url('../images/home-bg-img.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
