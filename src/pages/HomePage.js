@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaMoneyBillWave, FaLock, FaMobileAlt, FaUsers, FaCreditCard, FaChartLine, } from 'react-icons/fa';
+import { FaMoneyBillWave, FaLock, FaMobileAlt, FaUsers, FaCreditCard, FaChartLine } from 'react-icons/fa';
 import '../styles/home.css';
 
 const HomePage = () => {
+  useEffect(() => {
+    const scrollY = 90; 
+    window.scrollTo({ top: scrollY });
+
+    const handleScroll = () => {
+      if (window.scrollY < scrollY) {
+        window.scrollTo({ top: scrollY });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero-section">
-      
-
         <div className="hero-content">
           <motion.h1
             className="hero-title"
@@ -45,6 +57,15 @@ const HomePage = () => {
               style={{ background: 'transparent', border: '2px solid white', color: 'white' }}
             >
               Learn More
+            </motion.a>
+            <motion.a
+              href="/pay"
+              className="cta-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ backgroundColor: 'white', color: '#ff6b6b', border: '2px solid white' }}
+            >
+              Go to Gateway
             </motion.a>
           </div>
         </div>

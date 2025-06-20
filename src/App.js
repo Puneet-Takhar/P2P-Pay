@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -8,7 +8,8 @@ import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import TransactionsPage from './pages/TransactionsPage';
+import TransactionGateway from './pages/TransactionGateway';
+import TransactionsHistory from './pages/TransactionsHistory';
 import TermsPage from './pages/TermsPage';
 import Help from './pages/Help';
 import Contact from './pages/Contact';
@@ -18,12 +19,11 @@ import GovernmentRelations from './pages/GovernmentRelations';
 import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
 import { AuthProvider } from './context/AuthContext';
-import TransactionIcon from './components/TransactionIcon';
 import Accessibility from './pages/Accessibility';
 import PrivacyStatement from './pages/PrivacyStatement';
 import Cookies from './pages/Cookies';
 import Legal from './pages/Legal'; 
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 import './styles/styles.css';
 
@@ -50,7 +50,8 @@ const App = () => {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
-              <Route path="/transactions" element={<TransactionsPage />} />
+              <Route path="/pay" element={<TransactionGateway />} />
+              <Route path="/transactionshistory" element={<TransactionsHistory />} />
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
@@ -66,7 +67,6 @@ const App = () => {
             </Routes>
           </motion.div>
           <Footer />
-          <TransactionIcon />
           <Analytics />
         </motion.div>
       </Router>
